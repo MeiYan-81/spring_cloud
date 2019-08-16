@@ -17,19 +17,19 @@ public class FeignController {
     @RequestMapping(value = "/feign-consumer",method = RequestMethod.GET)
     public String helloFeign(@RequestParam String name){
         System.out.println("name: "+name);
-        return helloService.hello(name);
+        return helloService.h(name);
     }
 
-    @RequestMapping(value = "/hello",method = RequestMethod.GET)
+    @RequestMapping(value = "/hello1",method = RequestMethod.GET)
     public String hello(@RequestHeader String name){
         System.out.println("name: "+name);
-        return helloService.hello(name);
+        return helloService.h(name);
     }
 
     @RequestMapping(value = "/index",method = RequestMethod.POST)
     public String index(@RequestBody User user){
         System.out.println("name: "+user.getName());
-        return helloService.hello(user.getName());
+        return helloService.h(user.getName());
     }
 
 }

@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient("cloud-app")
 public interface HelloService {
 
+    /*@RequestMapping("/hello")
+    String hello(@RequestParam String name);*/
+
     @RequestMapping("/hello")
-    String hello(@RequestParam String name);
+    String h(@RequestParam String name);
 
 }

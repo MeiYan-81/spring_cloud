@@ -1,5 +1,6 @@
 package com.ps.helloapp.controller;
 
+import com.ps.helloapp.controller.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -29,6 +30,12 @@ public class HelloController {
     public String hello(String name){
         System.out.println(name);
         return String.format("hello %s !",name);
+    }
+
+    @RequestMapping(value = "/hello1",method = RequestMethod.POST)
+    public String hello1(User user){
+        System.out.println(user);
+        return String.format("hello1 %s !",user);
     }
 
 }
